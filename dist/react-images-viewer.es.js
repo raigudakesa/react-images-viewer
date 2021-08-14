@@ -737,7 +737,7 @@ var Portal = function (_Component) {
           this.props,
           React.createElement(
             CSSTransition,
-            _extends({ timeout: { enter: duration, exit: duration } }, props.transitionClass ? { className: props.transitionClass } : {}),
+            _extends({ timeout: { enter: duration, exit: duration } }, this.props.transitionClass ? { className: this.props.transitionClass } : {}),
             React.createElement(
               'div',
               null,

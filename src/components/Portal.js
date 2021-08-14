@@ -30,7 +30,7 @@ export default class Portal extends Component {
         <style>{styles}</style>
         <TransitionGroup
           {...this.props}>
-          <CSSTransition timeout={{ enter: duration, exit: duration }} {...(props.transitionClass ? {className: props.transitionClass} : {})}>
+          <CSSTransition timeout={{ enter: duration, exit: duration }} {...(this.props.transitionClass ? {className: this.props.transitionClass} : {})}>
             <div>{this.props.children}</div>
           </CSSTransition>
         </TransitionGroup>

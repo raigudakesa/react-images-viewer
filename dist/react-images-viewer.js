@@ -739,7 +739,7 @@
             this.props,
             React__default.createElement(
               reactTransitionGroup.CSSTransition,
-              _extends({ timeout: { enter: duration, exit: duration } }, props.transitionClass ? { className: props.transitionClass } : {}),
+              _extends({ timeout: { enter: duration, exit: duration } }, this.props.transitionClass ? { className: this.props.transitionClass } : {}),
               React__default.createElement(
                 'div',
                 null,
