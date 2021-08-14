@@ -369,7 +369,8 @@ class ImgsViewer extends Component {
   render() {
     return (
       <ThemeContext.Provider value={this.props.theme}>
-        <Portal> {this.renderDialog()} </Portal>
+        <Portal 
+			transitionClass={this.props.transitionClass}> {this.renderDialog()} </Portal>
       </ThemeContext.Provider>
     );
   }
@@ -391,6 +392,7 @@ ImgsViewer.propTypes = {
     })
   ).isRequired,
   isOpen: PropTypes.bool,
+  transitionClass: PropTypes.object,
   leftArrowTitle: PropTypes.string,
   onClickImg: PropTypes.func,
   onClickNext: PropTypes.func,

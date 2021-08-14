@@ -737,7 +737,7 @@ var Portal = function (_Component) {
           this.props,
           React.createElement(
             CSSTransition,
-            { timeout: { enter: duration, exit: duration }, className: 'fade' },
+            _extends({ timeout: { enter: duration, exit: duration } }, props.transitionClass ? { className: props.transitionClass } : {}),
             React.createElement(
               'div',
               null,
@@ -1225,7 +1225,8 @@ var ImgsViewer = function (_Component) {
         { value: this.props.theme },
         React.createElement(
           Portal,
-          null,
+          {
+            transitionClass: this.props.transitionClass },
           " ",
           this.renderDialog(),
           " "
@@ -1250,6 +1251,7 @@ ImgsViewer.propTypes = {
     thumbnail: PropTypes.string
   })).isRequired,
   isOpen: PropTypes.bool,
+  transitionClass: PropTypes.object,
   leftArrowTitle: PropTypes.string,
   onClickImg: PropTypes.func,
   onClickNext: PropTypes.func,

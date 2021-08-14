@@ -739,7 +739,7 @@
             this.props,
             React__default.createElement(
               reactTransitionGroup.CSSTransition,
-              { timeout: { enter: duration, exit: duration }, className: 'fade' },
+              _extends({ timeout: { enter: duration, exit: duration } }, props.transitionClass ? { className: props.transitionClass } : {}),
               React__default.createElement(
                 'div',
                 null,
@@ -1227,7 +1227,8 @@
           { value: this.props.theme },
           React__default.createElement(
             Portal,
-            null,
+            {
+              transitionClass: this.props.transitionClass },
             " ",
             this.renderDialog(),
             " "
@@ -1252,6 +1253,7 @@
       thumbnail: PropTypes.string
     })).isRequired,
     isOpen: PropTypes.bool,
+    transitionClass: PropTypes.object,
     leftArrowTitle: PropTypes.string,
     onClickImg: PropTypes.func,
     onClickNext: PropTypes.func,
