@@ -24,12 +24,13 @@ export default class Portal extends Component {
 				.fade-leave { opacity: 1; }
 				.fade-leave.fade-leave-active { opacity: .01; transition: opacity ${duration}ms; }
 		`
-
+	const groupProps = {...this.props};
+	if(groupProps.transitionClass) delete groupProps.transitionClass;
     render(
       <div>
         <style>{styles}</style>
         <TransitionGroup
-          {...this.props}>
+          {...groupProps}>
           <CSSTransition timeout={{ enter: duration, exit: duration }} {...(this.props.transitionClass ? {className: this.props.transitionClass} : {})}>
             <div>{this.props.children}</div>
           </CSSTransition>

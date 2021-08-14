@@ -723,7 +723,8 @@ var Portal = function (_Component) {
       // Animate fade on mount/unmount
       var duration = 200;
       var styles = '\n\t\t\t\t.fade-enter { opacity: 0.01; }\n\t\t\t\t.fade-enter.fade-enter-active { opacity: 1; transition: opacity ' + duration + 'ms; }\n\t\t\t\t.fade-leave { opacity: 1; }\n\t\t\t\t.fade-leave.fade-leave-active { opacity: .01; transition: opacity ' + duration + 'ms; }\n\t\t';
-
+      var groupProps = Object.assign({}, this.props);
+      if (groupProps.transitionClass) delete groupProps.transitionClass;
       render(React.createElement(
         'div',
         null,
@@ -734,7 +735,7 @@ var Portal = function (_Component) {
         ),
         React.createElement(
           TransitionGroup,
-          this.props,
+          groupProps,
           React.createElement(
             CSSTransition,
             _extends({ timeout: { enter: duration, exit: duration } }, this.props.transitionClass ? { className: this.props.transitionClass } : {}),
